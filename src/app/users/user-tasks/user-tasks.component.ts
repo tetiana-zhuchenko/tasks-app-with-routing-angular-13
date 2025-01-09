@@ -24,12 +24,20 @@ import { UsersService } from '../users.service';
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
 })
-export class UserTasksComponent {
+export class UserTasksComponent implements OnInit {
   // userId = input<string>();
   message = input.required<string>();
   userName = input.required<string>();
+  private activatedRoute = inject(ActivatedRoute);
+
+  ngOnInit(): void {
+    this.activatedRoute.data.subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+    });
+  }
   // private userService = inject(UsersService);
-  // private activatedRoute = inject(ActivatedRoute);
   // private destroyRef = inject(DestroyRef);
   // userName = computed(
   //   () => this.userService.users.find((u) => u.id === this.userId())?.name
