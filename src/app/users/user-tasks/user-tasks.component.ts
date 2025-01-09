@@ -18,6 +18,7 @@ import { UsersService } from '../users.service';
 })
 export class UserTasksComponent implements OnInit {
   userId = input<string>();
+  message = input.required<string>();
   private userService = inject(UsersService);
   private activatedRoute = inject(ActivatedRoute);
   userName = '';
@@ -27,6 +28,8 @@ export class UserTasksComponent implements OnInit {
   // );
 
   ngOnInit(): void {
+    console.log('Input Data: ' + this.message());
+
     console.log(this.activatedRoute.snapshot);
     // this approach can be used when you need static data
     console.log(this.activatedRoute.snapshot.paramMap.get('userId'));
