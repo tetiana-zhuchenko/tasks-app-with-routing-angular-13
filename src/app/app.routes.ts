@@ -14,6 +14,7 @@ export const routes: Routes = [
     component: NoTaskComponent,
     // redirectTo: '/users/u1',
     // pathMatch: 'full',
+    title: 'No tasks selected',
   },
   {
     path: 'users/:userId', // <your-domain>/users/<uid>
