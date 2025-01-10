@@ -12,7 +12,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const dummyCanMatch: CanMatchFn = (route, segments) => {
   const router = inject(Router);
   const shouldGetAccesses = Math.random();
-  if (shouldGetAccesses < 0.5) {
+  if (shouldGetAccesses < 1) {
     return true;
   }
   return new RedirectCommand(router.parseUrl('/unauthorized'));
